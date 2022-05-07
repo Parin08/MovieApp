@@ -1,0 +1,146 @@
+body{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color:snow;
+}
+
+.detail-A{
+    width:60%;
+    height:fit-content;
+    margin:0 auto;
+}
+
+@media only screen and (max-width: 1400px) {
+    .detail-A{
+        width:80%;
+        height:fit-content;
+        margin:0 auto;
+    }
+  }
+  
+@media only screen and (max-width: 800px) {
+    .detail-A{
+        width:100%;
+        height:fit-content;
+        margin:0 auto;
+    }
+  }
+.poster{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.poster img{
+    height:20rem;    
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.display-4{
+    font-size: 2.5rem;;
+}
+.lead{
+    font-size: .8rem;
+}
+.fas{
+    color:rgb(255, 205, 66);
+}
+hr{
+    color:snow;
+    margin:1rem 0 0 0 ;
+}
+.detail-B{
+  
+    text-align:center;
+}
+  
+@media only screen and (max-width: 800px) {
+    .detail-B{
+       margin: 0 auto;  
+        text-align:center;
+    }
+  }
+.detail-B h5{
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.btn{
+    width:30%;
+    box-shadow: .3rem .2rem rgb(2, 28, 54);
+}
+@media only screen and (max-width: 1000px) {
+    .btn{
+        width:60%;
+    }
+  }
+  
+
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    height: 70%;
+    width:30%;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    height: 100%;
+    max-width: 100%;
+    padding: 10px;
+    background-color: rgb(39, 38, 38);
+  }
+  
+
+  .form-container h1{
+      text-align: center;
+  }
+  
+  .form-container label{
+      margin:2% 0;
+  }
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    margin:2%;
+    background-color: #04AA6D;    
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;  
+    opacity: 0.8;
+    width:200%;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+.btns{
+    position: absolute;
+    bottom: 10px;
+}
+
+.individualbtn{
+   
+    width:200%;
+    display: flex;
+    flex-direction: row;
+}

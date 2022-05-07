@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate') -%>
+  <link rel='stylesheet' href='/stylesheets/newForm.css'>
+  <div class="container-fluid back">
+
+    <form method='POST' action='/show' class="needs-validation" novalidate>
+      <h3 class='dispaly-1'>Add new show</h3>
+      <div class="fields">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="show">Show Time:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="show" name='show' placeholder="eg. 08:30PM or 10:40AM" required>
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+              <div class="col-3 col-md-2">
+                <label for="screen">Screen number:</label>
+              </div>
+              <div class="col-9 col-md-10">
+                <input type="text" class="form-control" id="screen" name='screen' placeholder="eg. 2-A or 6-B" required>
+                <div class="valid-feedback">
+                  Correct!
+                </div>
+                <div class="invalid-feedback">
+                  Please provide a valid input.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+      </div>
+    </form>
+  </div>

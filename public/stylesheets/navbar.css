@@ -1,0 +1,47 @@
+.navbar{
+
+    color:rgb(255, 255, 255);
+    height:7rem;
+    margin: 0 2rem 4rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+}
+
+ul li{
+    margin-right: 3rem;
+}
+
+.nav-link:hover{
+    transition-delay: .15s;
+    color:rgb(64, 165, 248) !important;
+}
+.navbar-brand{
+    font-family: 'Shizuru', cursive;
+    font-size: 2.4rem;
+}
+
+#btn{
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    color:rgb(6, 137, 224);
+    border:0.3px solid rgb(6, 137, 224);
+}
+
+#btn:hover{
+    background-color: rgb(6, 137, 224);
+    color:rgb(0, 0, 0);
+    border:0.3px solid rgb(6, 137, 224);
+}
+
+
+.valid-feedback{
+    color:rgb(67, 238, 0);
+    font-size: 1rem;
+}
+
+.invalid-feedback{
+    color:rgb(238, 0, 0);
+    font-size: 1rem;
+}

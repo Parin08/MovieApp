@@ -1,0 +1,103 @@
+<% layout('layouts/boilerplate') -%>
+    <link rel='stylesheet' href='/stylesheets/details.css'>
+    <div class="container">
+        <div class="row detail-A">
+            <div class="poster col-6">
+                <img src='<%= movie.imgUrl%>' alt='<%= movie.title%>'>
+            </div>
+            <div class="details col-6">
+                <h5 class='display-4'>
+                    <%= movie.title%>
+                </h5>
+                <p class='lead'>
+                    <%= movie.genre%>
+                </p>
+                <p class='lead'><i class="fas fa-star"></i>
+                    <%= movie.imdbRating%>/10 IMDB
+                </p>
+
+                <button class='btn btn-primary' onclick="openForm()">Get tickets</button>
+
+                <div class="form-popup" id="myForm">
+                    <form action="/movies/<%= movie._id%>/ticketBook" method='POST' class="form-container">
+
+                        <h1>Book Ticket</h1>
+
+                        <label for="ShowTimes"><b>Show Times</b></label>
+                        <select id="ShowTimes" class="form-select" name="Show">
+                            <% for(shows of movie.showtime){ %>
+
+                                <option value="<%= shows._id %>">
+                                    <%= shows.show %>
+                                </option>
+                                <% } %>
+                        </select>
+
+                        <label for="Theater"><b>Theater</b></label>
+                        <select id="Theater" class="form-select" name="Theater">
+
+                            <option value="1">Dolson Theater, Ottawa, ON</option>
+
+                        </select>
+                        <label for="Tickets"><b>Tickets</b></label>
+                        <select id="Tickets" class="form-select" name="Tickets">
+
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+
+
+                        <div class="btns">
+                            <div class="individualbtn">
+                                <button type="submit" class="btn">Book Ticket</button>
+                                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <hr />
+            </div>
+        </div>
+        <div class="detail-B">
+            <h5 class='display-4'>Synopsis</h5>
+            <p>
+                <%= movie.description%>
+            </p>
+            <h5 class='display-4'>Cast</h5>
+            <p>
+                <%= movie.cast%>
+            </p>
+            <h5 class='display-4'>Directors</h5>
+            <p>
+                <%= movie.director%>
+            </p>
+            <h5 class='display-4'>Writers</h5>
+            <p>
+                <%= movie.writer%>
+            </p>
+            <h5 class='display-4'>Language</h5>
+            <p>
+                <%= movie.language%>
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>

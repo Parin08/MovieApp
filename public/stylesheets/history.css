@@ -1,0 +1,20 @@
+body{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color:snow;
+}
+
+.poster{
+    height:15rem;
+    width:15rem;
+    padding:1rem;
+}
+
+.card{
+    width:50%;
+    margin:1rem auto;
+    box-shadow: 1rem 0.7rem black;
+}

@@ -1,0 +1,179 @@
+<% layout('layouts/boilerplate') -%>
+  <link rel='stylesheet' href='/stylesheets/newForm.css'>
+  <div class="container-fluid back">
+
+    <form method='POST' action='/movies' class="needs-validation" novalidate>
+      <h3 class='dispaly-1'>Add new movie</h3>
+      <div class="fields">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="title">Title:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="title" name='title' placeholder="Title" required>
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="image">Image URL:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="image" name='imgUrl' placeholder="ImageURL" required>
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="director">Director:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="director" name='director' placeholder="Director" required>
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="writer">Writer:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="writer" name='writer' placeholder="Writer" required>
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="cast">Cast:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="cast" name='cast' placeholder="Cast" required>
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="language">Language:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="language" name='language' placeholder="Language" required>
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="genre">Genre:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="genre" name='genre' placeholder="Genre" required>
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row description_distance">
+            <div class="col-4 col-md-3">
+              <label for="description">Description:</label>
+            </div>
+            <div class="col-8 col-md-9">
+              <textarea class="form-control" id="description" name='description' rows="6" placeholder="Description"
+                required></textarea>
+
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-4 col-md-3">
+              <label for="imdbRating">ImdbRating:</label>
+            </div>
+            <div class="col-8 col-md-9">
+              <input type="text" class="form-control" id="imdbRating" name='imdbRating' placeholder="ImdbRating"
+                required>
+              <div class="valid-feedback">
+                Correct!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid input.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-check">
+          <div class="row">
+            <div class="col-4 col-md-3">
+              <label for="showtime">Show times</label>
+            </div>
+            <div class="col-8 col-md-9">
+
+              <% for(showTime of showTimes) { %>
+                <input type="checkbox" class="form-check-input" name="showtime" value="<%= showTime._id%>"
+                  id="<%= showTime._id%>">
+                <label class="form-check-label" for="<%= showTime._id%>">
+                  <%= showTime.show%> (<%= showTime.screen%>)
+                </label>
+
+                <% } %>
+
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+      </div>
+    </form>
+  </div>

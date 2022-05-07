@@ -1,0 +1,96 @@
+body{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color:snow;
+}
+
+hr{
+    color:hsla(0, 66%, 94%, 0.906);
+}
+
+
+.confirm{
+
+text-align: center;
+}
+
+.confirm h3{
+    font-size: 4rem;
+}
+
+.confirm p{
+    font-size: 2rem;
+}
+
+.poster{
+    height:30rem;
+    width:100%;
+    border:0.15rem solid grey;
+}
+
+.poster:hover{
+    box-shadow: 0.3rem .3rem rgb(64, 165, 248);   
+    transition-delay: 0.15s;
+}
+
+.poster_title{
+    font-size: 1.5rem;
+    color:whitesmoke;
+}
+
+.poster_link{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin-top: -1.2rem;
+    color:whitesmoke;    
+    
+}
+
+.poster_link:hover{
+    color:rgb(64, 165, 248);   
+    transition-delay: .15s;     
+}
+
+.poster_link:hover  .fa-info-circle {
+    color:rgb(64, 165, 248);
+    transition-delay: 0.15s;
+}
+
+.poster_link:hover  .poster_link_text{
+    border-bottom:0.25rem solid rgb(64, 165, 248);
+    transition-delay: 0.15s;
+}
+
+.expand{
+    height:25rem;
+    width:100%;
+    border:0.15rem solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;   
+}
+.btn {
+    border: none;
+    color:snow;
+    font-size: 3rem;
+}
+
+
+.btn:hover , .expand:hover .btn{
+    color:rgb(64, 165, 248);
+  
+}
+
+.btn:focus{
+    border:none;
+    outline:none !important;
+
+}
+.expand:hover {
+    border:1px solid rgb(64, 165, 248);
+}

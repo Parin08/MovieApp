@@ -1,0 +1,140 @@
+<% layout('layouts/boilerplate') -%>
+  <link rel='stylesheet' href='/stylesheets/newForm.css'>
+  <div class="container-fluid back">
+
+    <form method='POST' action='/movies/<%= movie._id%>?_method=PATCH'>
+      <h3 class='dispaly-1'>Add new movie</h3>
+      <div class="fields">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="title">Title:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="title" name='title' placeholder="Title"
+                value="<%=  movie.title%>">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="image">Image URL:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="image" name='imgUrl' placeholder="ImageURL"
+                value="<%=  movie.imgUrl%>">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="director">Director:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="director" name='director' placeholder="Director"
+                value="<%=  movie.director%>">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="writer">Writer:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="writer" name='writer' placeholder="Writer"
+                value="<%=  movie.writer%>">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="cast">Cast:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="cast" name='cast' placeholder="Cast"
+                value="<%=  movie.cast%>">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="language">Language:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="language" name='language' placeholder="Language"
+                value="<%=  movie.language %>">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <label for="genre">Genre:</label>
+            </div>
+            <div class="col-9 col-md-10">
+              <input type="text" class="form-control" id="genre" name='genre' placeholder="Genre"
+                value="<%=  movie.genre%>">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-4 col-md-3">
+              <label for="description">Description:</label>
+            </div>
+            <div class="col-8 col-md-9">
+              <textarea class="form-control" id="description" name='description' rows="6"
+                placeholder="Description"><%=  movie.description%></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-4 col-md-3">
+              <label for="imdbRating">ImdbRating:</label>
+            </div>
+            <div class="col-8 col-md-9">
+              <input type="text" class="form-control" id="imdbRating" name='imdbRating' placeholder="ImdbRating"
+                value="<%=  movie.imdbRating%>">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-4 col-md-3">
+              <label for="imdbRating">Add shows:</label>
+            </div>
+            <div class="col-8 col-md-9">
+
+              <%for(let i=0;i<arr1.length;i++){ %>
+                <% if(!arr.includes(arr1[i])){%>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="showtime" value="<%= showTimes[i]._id%>"
+                      id="<%= showTimes[i]._id%>">
+                    <label class="form-check-label" for="<%= showTimes[i]._id%>">
+                      <%= showTimes[i].show%>
+                    </label>
+                  </div>
+                  <%} else{%>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="showtime" value="<%= showTimes[i]._id%>"
+                        id="<%= showTimes[i]._id%>" checked>
+                      <label class="form-check-label" for="<%= showTimes[i]._id%>">
+                        <%= showTimes[i].show%>
+                      </label>
+                    </div>
+                    <%}%>
+                      <%}%>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+      </div>
+    </form>
+  </div>

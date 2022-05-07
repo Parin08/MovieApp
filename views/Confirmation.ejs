@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') -%>
+<link rel='stylesheet' href='/stylesheets/Confirmation.css'>
+<div class="confirm">
+    <h3>Confirmation</h3>
+    <p>Your tickets are booked. </p>
+    <hr />
+</div>
+    <div class="section">
+    
+        <div class="row p-4">
+        <% movies.forEach( (movie,i) => { if(i<8){%>     
+                       
+                <div class="col-3  my-2">    
+                        
+                                <a href='/movies/<%= movie._id%>'> <img class='poster' src=<%=movie.imgUrl%>
+                    alt=<%= movie.title%>>       </a>                
+                        <div class="row">
+                            <p class='poster_title lead mt-2'>
+                                <%= movie.title%>
+                            </p>
+                            <a class='poster_link' href='/movies/<%= movie._id%>'>
+                                <i class="far fa-info-circle"></i>
+                                <spam class='poster_link_text'>About</spam>
+                            </a>
+                        </div>
+               
+                </div>
+              
+                <% }} )%>
+              
+            </div>          
+    </div>

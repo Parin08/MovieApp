@@ -1,0 +1,164 @@
+<% layout('layouts/boilerplate') -%>
+
+    <link rel='stylesheet' href='/stylesheets/movieApp.css'>
+    <div class="container-fluid">
+        <!-- ============================== Movie section ============================ -->
+        <div class="section">
+            <h3 class='main_titile m-2'>Movies</h3>
+            <div class="row p-4">
+                <% movies.forEach( (movie,i)=> { if(i<12){%>
+
+                        <div class="col-sm-6 col-md-4 col-xl-2 my-2">
+                            <% if(i==11){%>
+                                <div class='expand'>
+                                    <form method='get' action='/movies/all'><button type='submit' class='btn'><i
+                                                class="far fa-plus-octagon"></i></button></form>
+                                </div>
+                                <% }else{ %>
+                                    <a href='/movies/<%= movie._id%>'> <img class='poster' src=<%=movie.imgUrl%>
+                                        alt=<%= movie.title%>> </a>
+                                    <div class="row">
+                                        <p class='poster_title lead mt-2'>
+                                            <%= movie.title%>
+                                        </p>
+                                        <a class='poster_link' href='/movies/<%= movie._id%>'>
+                                            <i class="far fa-info-circle"></i>
+                                            <spam class='poster_link_text'>About</spam>
+                                        </a>
+                                    </div>
+                                    <% } %>
+                        </div>
+
+                        <% }} )%>
+
+            </div>
+        </div>
+        <!-- ============================== Others section ============================ -->
+        <div class="section">
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <a href='#' class='products'>
+                        <i class="far fa-calendar-check"></i>
+                        <h6>Book events</h6>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href='#' class='products'>
+                        <i class="fas fa-building"></i>
+                        <h6>Corporate orders</h6>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href='#' class='products'>
+                        <i class="fas fa-birthday-cake"></i>
+                        <h6>Book party</h6>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href='#' class='products'>
+                        <i class="fas fa-briefcase"></i>
+                        <h6>Careers</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- ============================== News section ============================ -->
+        <div class="section">
+            <h3 class='main_titile m-2'>Latest News</h3>
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <a class='news_link' href='#'>
+                        <img class='news_image' src='<%= news[0].urlToImage %>' alt='<%= news[0].author%>'>
+                        <h5 class='news_title'>
+                            <%= news[0].title%>
+                        </h5>
+                    </a>
+                    <p class='news_description lead'>
+                        <%= news[0].description.substring(0,75)%> ...
+                    </p>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a class='news_link' href='#'>
+                        <img class='news_image' src='<%= news[1].urlToImage %>' alt='<%= news[1].author%>'>
+                        <h5 class='news_title'>
+                            <%= news[1].title%>
+                        </h5>
+                    </a>
+                    <p class='news_description lead'>
+                        <%= news[1].description.substring(0,75)%> ...
+                    </p>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a class='news_link' href='#'>
+                        <img class='news_image' src='<%= news[2].urlToImage %>' alt='<%= news[2].author%>'>
+                        <h5 class='news_title'>
+                            <%= news[2].title%>
+                        </h5>
+                    </a>
+                    <p class='news_description lead'>
+                        <%= news[2].description.substring(0,75)%> ...
+                    </p>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a class='news_link' href='#'>
+                        <img class='news_image' src='<%= news[3].urlToImage %>' alt='<%= news[3].author%>'>
+                        <h5 class='news_title'>
+                            <%= news[3].title%>
+                        </h5>
+                    </a>
+                    <p class='news_description lead'>
+                        <%= news[3].description.substring(0,75)%> ...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================== extra section ============================ -->
+        <div class="section">
+            <hr />
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <p class='extra_head'>More at MovieApp </p>
+                    <p class='extra_info'>Health & safety </p>
+                    <p class='extra_info'>Careers at MovieApp</p>
+                    <p class='extra_info'>MovieApp mobile</p>
+                    <p class='extra_info'>E-gift cards </p>
+                    <p class='extra_info'>MovieApp digital media</p>
+                </div>
+                <div class="col-6 col-md-4">
+                    <p class='extra_head'>Corporate information </p>
+                    <p class='extra_info'>Corporate sales & rentals </p>
+                    <p class='extra_info'>Press room</p>
+                    <p class='extra_info'>Investor relationship</p>
+                </div>
+                <div class="col-6 offset-3 col-md-4 offset-md-0">
+                    <p class='extra_head'>Theatre information</p>
+                    <p class='extra_info'>Food and drinks</p>
+                    <p class='extra_info'>Stars and Strollers</p>
+                    <p class='extra_info'>Book a party</p>
+                    <p class='extra_info'>Access 2 Program </p>
+                    <p class='extra_info'>Accesibility policy</p>
+                    <p class='extra_info'>Guest code</p>
+                </div>
+
+            </div>
+            <hr />
+        </div>
+
+
+        <!-- ============================== image section ============================ -->
+        <div class="section">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class='image_post' src="https://wallpaperaccess.com/full/1508269.jpg" alt="photo1">
+                </div>
+                <div class="col-md-6">
+                    <img class='image_post'
+                        src="https://theknackinitiative.files.wordpress.com/2014/03/bane-batman-standoff-the-dark-knight-rises-wall-poster1.jpg?w=640&h=294"
+                        alt="photo2">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ============================== footer section ============================ -->

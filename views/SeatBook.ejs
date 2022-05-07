@@ -1,0 +1,75 @@
+<% layout('layouts/boilerplate') -%>
+    <link rel='stylesheet' href='/stylesheets/seatBook.css'>
+    <div class="header">
+        <h5>Seat Selection</h5>
+    </div>
+    <div class="section">
+
+        <div class="opp">
+            <ul class="showcase">
+                <li>
+                    <input type="checkbox" class="seat" disabled>
+                    <label><img
+                            src="https://cdn-icons.flaticon.com/png/512/2430/premium/2430157.png?token=exp=1651544189~hmac=79b6e785cc9d540004aa98bbcbb8f378" /></label>
+                    <small>N/A</small>
+                </li>
+                <li>
+                    <input type="checkbox" class="seat" checked disabled>
+                    <label><img
+                            src="https://cdn-icons.flaticon.com/png/512/2430/premium/2430157.png?token=exp=1651544189~hmac=79b6e785cc9d540004aa98bbcbb8f378" /></label>
+                    <small>Selected</small>
+                </li>
+                <li>
+                    <div class="book">
+                        <input type="checkbox" class="seat" checked disabled>
+                        <label><img
+                                src="https://cdn-icons.flaticon.com/png/512/2430/premium/2430157.png?token=exp=1651544189~hmac=79b6e785cc9d540004aa98bbcbb8f378" /></label>
+                    </div>
+                    <small>Occupied</small>
+
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="screen"></div>
+            <form action="/movies/<%=id%>/seatBook" onchange="myFunction()" name='Theater' method="post">
+
+
+                <% let checker=1%>
+                    <% for(let i="A" .charCodeAt(0); i <="H" .charCodeAt(0); i++) { %>
+                        <div class="aisle">
+                            <% let num=eval("String.fromCharCode(" + i + ")" )%>
+
+                                <% for(let i=1;i<=9;i++){ %>
+                                    <% if(seatOccupation.includes(`${i}${num}`)) {%>
+
+                                        <div class="book">
+                                            <input type="checkbox" class="seat" checked disabled>
+                                            <label><img
+                                                    src="https://cdn-icons.flaticon.com/png/512/2430/premium/2430157.png?token=exp=1651544189~hmac=79b6e785cc9d540004aa98bbcbb8f378" /></label>
+                                        </div>
+                                        <% } else{ %>
+                                            <% if(checker<=qty ) {%>
+                                                <input type="checkbox" class="seat" name='seat' id='<%= num %><%= i %>'
+                                                    value="<%= num %><%= i %>" checked>
+                                                <label for="<%= num %><%= i %>"><img
+                                                        src="https://cdn-icons.flaticon.com/png/512/2430/premium/2430157.png?token=exp=1651544189~hmac=79b6e785cc9d540004aa98bbcbb8f378" /></label>
+                                                <% checker++ %>
+                                                    <% } else{ %>
+                                                        <input type="checkbox" class="seat" name='seat'
+                                                            id='<%= num %><%= i %>' value="<%= num %><%= i %>">
+                                                        <label for="<%= num %><%= i %>"><img
+                                                                src="https://cdn-icons.flaticon.com/png/512/2430/premium/2430157.png?token=exp=1651544189~hmac=79b6e785cc9d540004aa98bbcbb8f378" /></label>
+                                                        <% } %>
+
+
+                                                            <% } %>
+                                                                <% } %>
+                        </div>
+                        <% } %>
+
+
+                            <button class='btn btn-primary btn-lg' type="submit">Ticket book</button>
+            </form>
+        </div>
+    </div>

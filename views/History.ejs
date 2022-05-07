@@ -1,0 +1,15 @@
+<% layout('layouts/boilerplate') -%>
+    <link rel='stylesheet' type="text/css" href='/stylesheets/history.css'>
+    <div class="container-fluid">
+        <% for(movie of movieHistory){ %>
+            <div class="row">
+
+                <div class="card">
+                    <img class='poster' src=<%=movie.movie.imgUrl%> alt=<%= movie.movie.title%>>
+
+                </div>
+
+
+            </div>
+            <%}%>
+    </div>

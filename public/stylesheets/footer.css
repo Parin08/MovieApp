@@ -1,0 +1,11 @@
+footer{
+    color:whitesmoke;
+    margin-top:2rem;
+}
+footer a{
+    color:whitesmoke
+}
+footer a:hover{
+    color:rgb(64,165,248);
+    transition-delay: .15s;
+}

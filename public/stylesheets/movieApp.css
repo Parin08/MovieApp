@@ -1,0 +1,184 @@
+body{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#navbarSupportedContent{
+    height:30px;
+}
+
+hr{
+    color:hsla(0, 66%, 94%, 0.906);
+}
+
+
+
+.main_titile{
+    text-align: center;
+    color:whitesmoke;
+    font-size: 4rem;    
+    margin-bottom: 2rem !important;
+    text-shadow: 0.3rem 0.2rem #0e0b0b;
+}
+
+/* ---------------------- poster style -------------------------------- */
+.poster{
+    height:25rem;
+    width:100%;
+    border:0.15rem solid grey;
+}
+
+.poster:hover{
+    box-shadow: 0.3rem .3rem rgb(64, 165, 248);   
+    transition-delay: 0.15s;
+}
+
+.poster_title{
+    font-size: 1.5rem;
+    color:whitesmoke;
+}
+
+.poster_link{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin-top: -1.2rem;
+    color:whitesmoke;    
+    
+}
+
+.poster_link:hover{
+    color:rgb(64, 165, 248);   
+    transition-delay: .15s;     
+}
+
+.poster_link:hover  .fa-info-circle {
+    color:rgb(64, 165, 248);
+    transition-delay: 0.15s;
+}
+
+.poster_link:hover  .poster_link_text{
+    border-bottom:0.25rem solid rgb(64, 165, 248);
+    transition-delay: 0.15s;
+}
+
+.expand{
+    height:25rem;
+    width:100%;
+    border:0.15rem solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;   
+}
+.btn {
+    border: none;
+    color:snow;
+    font-size: 3rem;
+}
+
+
+.btn:hover , .expand:hover .btn{
+    color:rgb(64, 165, 248);
+  
+}
+
+.btn:focus{
+    border:none;
+    outline:none !important;
+
+}
+.expand:hover {
+    border:1px solid rgb(64, 165, 248);
+}
+
+/* ---------------------- products style -------------------------------- */
+
+.products{
+    height:13rem;
+    width:100%;
+    border:0.01rem solid grey;
+    color:whitesmoke;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 1rem;;
+}
+
+.products:hover{
+    border-bottom: 0.2rem solid rgb(64, 165, 248);
+    color:whitesmoke;
+    transition: 0.15s;
+}
+
+.products i{
+    font-size:4rem;
+    font-weight: 100;
+    margin-bottom:1rem;
+}
+
+.products h6{
+    font-size:1.4rem;
+}
+
+
+/* ---------------------- News style -------------------------------- */
+.news_title{
+    font-size: 1.9rem;
+}
+.news_link{
+    text-decoration: none;
+    color:whitesmoke;
+    text-align: center;
+}
+.news_link:hover{
+    text-decoration: none;
+    color:rgb(64, 165, 248);    
+    transition-delay: .2s;
+}
+.news_image{
+    color:whitesmoke;
+    height:15rem;
+    width:100%;
+}
+
+.news_link:hover .news_image{
+      border-bottom:  0.2rem solid rgb(64, 165, 248);
+      transition-delay: .2s;
+}
+
+.news_description{
+    color:whitesmoke;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+/* ---------------------- extras style -------------------------------- */
+.extra_head{
+    text-align: center;
+    color:whitesmoke;
+    font-size: 1.7rem;
+    margin-top:2rem;
+}
+
+.extra_info{
+    text-align: center;
+    color:whitesmoke;
+    font-size: 1.1rem;
+}
+/* ---------------------- images style -------------------------------- */
+
+.image_post{
+    height:25rem;
+    width: 100%;
+}
+/* ---------------------- footer style -------------------------------- */
+footer{
+    background-color: rgb(0, 0, 0);
+    color:whitesmoke;
+}

@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') -%>
+    <link rel='stylesheet' type="text/css" href='/stylesheets/allMovies.css'>
+    <div class="container-fluid">
+        <% for(movie of movies){ %>
+            <div class="row">
+           
+                <div class="card">
+                 <img class='poster' src=<%=movie.imgUrl%> alt=<%= movie.title%>>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= movie.title%>
+                            </h5>
+                            <p class="card-text">
+                                <%= movie.description%>
+                            </p>
+                            <a href="/movies/<%= movie._id%>" class="btn btn-primary">Details</a>
+                         
+                                <%if(user  && user.equals(movie.user._id)){%>
+                               <a href = '/movies/<%= movie._id%>/edit'> <button  class='btn btn-info'>EDIT</button></a>
+                              
+                                    
+                            <form action="/movies/<%= movie._id%>?_method=DELETE" method='POST'>                              
+                                <button type="submit" class='btn btn-danger'>DELETE</button>
+                            </form>
+                            <%}%>
+                        </div>
+                </div>
+
+
+            </div>
+            <%}%>
+    </div>

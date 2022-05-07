@@ -1,0 +1,48 @@
+<link rel='stylesheet' href='/stylesheets/navbar.css'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet">
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/movies">MovieApp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav w-100 d-flex flex-row-reverse ml-0">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/movies/new">New</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/show">Add show</a>
+                </li>
+
+
+                <% if(!user){ %>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Register">Sign up</a>
+                    </li>
+                    <% } else {%>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/history">History</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/Logout">Logout</a>
+                        </li>
+                        <%}%>
+            </ul>
+            <form class="d-flex" method="post" action="/movies/search">
+                <input class="form-control me-2" size="50" height="50" type="search" placeholder="search" name="Search">
+                <button class="btn btn-outline-info" type="submit" id="btn">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
